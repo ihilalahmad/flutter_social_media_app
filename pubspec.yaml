@@ -43,6 +43,7 @@ dependencies:
   firebase_database: ^10.0.6
   persistent_bottom_nav_bar:
   flutter_svg: ^1.1.5
+  image_downloader: ^0.31.0
 
 
 dev_dependencies:

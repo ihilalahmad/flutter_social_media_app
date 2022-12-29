@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:tech_media/res/fonts.dart';
+import 'package:tech_media/view_model/services/splash_services.dart';
+
+import '../res/color.dart';
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  SplashServices _splashServices = SplashServices();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _splashServices.isUserLoggedIn(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image(image: AssetImage('assets/images/my_logo.png')),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 20),
+              child: Center(
+                child: Text(
+                  'My Social Media App',
+                  style: TextStyle(
+                      fontFamily: AppFonts.sfProDisplayBold,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w700),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
