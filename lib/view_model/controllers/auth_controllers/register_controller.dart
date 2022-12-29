@@ -36,6 +36,7 @@ class RegisterController with ChangeNotifier {
           Utils.toastMessage('Error: ${error.toString()}');
         });
 
+
         setLoading(false);
         Utils.toastMessage('User created successfully');
       }).onError((error, stackTrace) {
